@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import { api } from '../../services/api';
+import { api } from '../../services/api';
 import styles from './styles.module.scss';
 // import io from 'socket.io-client';
 
@@ -26,11 +26,11 @@ let messagesQueue: Message[] = [];
 export function MessageList() {
   const [messages, setMessages] = useState<Message[]>([]);
 
-  // useEffect(() => {
-  //   api.get<Message[]>('messages/last3').then(response => {
-  //     setMessages(response.data)
-  //   })
-  // }, [])
+  useEffect(() => {
+    api.get<Message[]>('messages/last3').then((response) => {
+      setMessages(response.data);
+    });
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
