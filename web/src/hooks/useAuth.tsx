@@ -97,9 +97,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }, []);
 
-  // const signInUrl = `https://github.com/login/oauth/authorize?scope=user&client_id=${clientId}&redirect_uri=${redirectUri}`;
-  const signInUrl =
-    'https://github.com/login/oauth/authorize?scope=user&client_id=98a45a4a8613cbbfcc3e&redirect_uri=http://localhost:3000';
+  const signInUrl = `https://github.com/login/oauth/authorize?scope=user&client_id=${clientId}&redirect_uri=${redirectUri}`;
 
   return (
     <AuthContext.Provider value={{ user, isSigningIn, signInUrl, signOut }}>
