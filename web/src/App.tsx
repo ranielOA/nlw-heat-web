@@ -1,7 +1,7 @@
 import styles from './App.module.scss';
-// import { LoginBox } from './components/LoginBox'
-// import { MessageList } from './components/MessageList'
-// import { SendMessageForm } from './components/SendMessageForm'
+import { LoginBox } from './components/LoginBox';
+import { MessageList } from './components/MessageList';
+import { SendMessageForm } from './components/SendMessageForm';
 // import { useAuth } from './hooks/useAuth'
 
 export function App() {
@@ -9,6 +9,12 @@ export function App() {
 
   return (
     <div className="App">
+      <main className={styles.contentWrapper}>
+        <MessageList />
+        <SendMessageForm />
+        <LoginBox />
+      </main>
+
       {/* <main className={`${styles.contentWrapper} ${!!user ? styles.contentSigned : ''}`}>
         <MessageList />
         { !!user ? <SendMessageForm /> : <LoginBox /> }
